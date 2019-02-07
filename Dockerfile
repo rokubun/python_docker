@@ -14,7 +14,8 @@ RUN apk --no-cache add \
         git \
         uncrustify \
         gdb \
-        doxygen
+        doxygen \
+        graphviz
         
 
 # Get yamlcpp and install it
