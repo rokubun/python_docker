@@ -1,28 +1,15 @@
-FROM alpine:edge as rcore_builder
+FROM python:3.7-alpine3.9
 
-# Install some basic tools
-RUN apk --no-cache add \
-        bash \
-        build-base \
-        make \
-        cmake \
-        valgrind \
-        binutils \
-        python3 \
-        tar \
-        gzip \
-        git \
-        uncrustify \
-        gdb \
-        doxygen \
-        graphviz
-        
+RUN apk add --no-cache \
+                       build-base \
+                       libxml2-dev \
+                       libxslt-dev \
+ && pip install --upgrade pip \
+ && pip install \
+                       jupyter \
+                       ixml \
+                       fastkml
 
-# Get yamlcpp and install it
-ARG YAMLCPP_URL=https://github.com/jbeder/yaml-cpp.git
-ARG YAMLCPP_TAG=yaml-cpp-0.6.2
+COPY jupyter_notebook_config.py /root/.jupyter/
 
-RUN git clone --depth 1 --branch ${YAMLCPP_TAG} ${YAMLCPP_URL} \
-    && (cd yaml-cpp; cmake -DCMAKE_INSTALL_PREFIX=${USRLOCAL} . ; make -j 8; make install) \
-    && rm -rf yaml-cpp
-
+CMD ["ipython"]
