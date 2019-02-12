@@ -15,7 +15,6 @@ RUN apk add --no-cache glib \
                 fastkml \
                 pyproj \
                 pymongo \
-                bson \ 
                 numpy
 
 RUN pip install scipy \
