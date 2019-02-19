@@ -15,10 +15,13 @@ RUN apk add --no-cache glib \
                 fastkml \
                 pyproj \
                 pymongo \
-                numpy
+                Flask 
 
-RUN pip install scipy \
-                matplotlib
+RUN pip install numpy
+
+RUN pip install scipy
+
+RUN pip install matplotlib
 
 COPY jupyter_notebook_config.py /root/.jupyter/
 
