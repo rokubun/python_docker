@@ -18,3 +18,19 @@ this command:
 
 Then proceed to address `localhost:7777` in your browser.
 
+
+# Tags
+
+## base
+
+The base Python docker simply inherits the Docker official python image and 
+has an ipython console, to run it
+
+    docker run -ti -v `pwd`:/tmp/work -w=/tmp/work rokubun/python:base
+
+## scipy
+
+This image includes the scipy/numpy/matplotlib packages into the base installation
+
+    docker run -ti -v `pwd`:/tmp/work -w=/tmp/work rokubun/python:scipy
+
