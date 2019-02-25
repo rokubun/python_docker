@@ -28,9 +28,15 @@ has an ipython console, to run it
 
     docker run -ti -v `pwd`:/tmp/work -w=/tmp/work rokubun/python:base
 
+## numpy 
+
+This image includes the numpy and matplotlib packages into the base installation
+
+    docker run -ti -v `pwd`:/tmp/work -w=/tmp/work rokubun/python:numpy
+
 ## scipy
 
-This image includes the scipy/numpy/matplotlib packages into the base installation
+This image includes the scipy/pandas packages into the base installation
 
     docker run -ti -v `pwd`:/tmp/work -w=/tmp/work rokubun/python:scipy
 

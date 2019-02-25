@@ -1,4 +1,4 @@
-FROM rokubun/python:scipy
+FROM rokubun/python:numpy
 
 # Note that pyzmq is forced to version before 18.0.0 to avoid compilation
 # errors with libzqm version 4.3.1

@@ -1,11 +1,6 @@
-FROM rokubun/python:base
+FROM rokubun/python:numpy
 
-RUN apk add --no-cache glib \
-                       build-base \
-                       libxml2-dev \
-                       libxslt-dev \
-                       freetype-dev \
-                       libpng-dev \
+RUN apk add --no-cache libpng-dev \
                        lapack-dev \
                        gfortran 
 
@@ -14,8 +9,7 @@ RUN apk add --no-cache glib \
 # errors with libzqm version 4.3.1
 RUN pip install --upgrade pip \
  && pip install pyzmq==17.1.2  \ 
- && pip install numpy \
  && pip install scipy \
- && pip install matplotlib
+ && pip install pandas
 
 CMD ["ipython"]
