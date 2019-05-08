@@ -40,3 +40,8 @@ This image includes the scipy/pandas packages into the base installation
 
     docker run -ti -v `pwd`:/tmp/work -w=/tmp/work rokubun/python:scipy
 
+## laslib
+
+Laslib with jupyter
+
+    docker run -ti -v `pwd`:/work -p 8080:80 laslib_jupyter
