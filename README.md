@@ -18,6 +18,16 @@ this command:
 
 Then proceed to address `localhost:7777` in your browser.
 
+To build the images in various platforms (to be used in e.g. Raspberry Pi), 
+launch the `docker buildx` command:
+
+```bash
+cd base_slim_stretch
+docker buildx build  --platform linux/amd64,linux/arm64,linux/arm/v7 -t rokubun/python:base-slim-stretch --push .
+```
+
+## Multiplatform build c
+
 
 # Tags
 
