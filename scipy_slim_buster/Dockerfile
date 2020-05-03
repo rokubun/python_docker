@@ -1,9 +1,8 @@
-FROM rokubun/python:numpy
+FROM rokubun/python:numpy-slim-buster
 
 RUN apk add --no-cache libpng-dev \
                        lapack-dev \
                        gfortran 
-
 
 # Note that pyzmq is forced to version before 18.0.0 to avoid compilation
 # errors with libzqm version 4.3.1
