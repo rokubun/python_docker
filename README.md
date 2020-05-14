@@ -22,9 +22,13 @@ To build the images in various platforms (to be used in e.g. Raspberry Pi),
 launch the `docker buildx` command:
 
 ```bash
-cd base_slim_stretch
-docker buildx build  --platform linux/amd64,linux/arm64,linux/arm/v7 -t rokubun/python:base-slim-stretch --push .
+folder=base_slim_stretch
+tag=${folder//_/-}
+cd ${folder}
+docker buildx build  --platform linux/amd64,linux/arm64 -t rokubun/python:${tag} --push .
 ```
+
+Raspberry Pi 4 uses `linux/arm64`, while previous models use `linux/arm/v7`.
 
 ## Multiplatform build c
 
